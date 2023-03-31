@@ -1,6 +1,6 @@
 Name:		texlive-highlightlatex
 Version:	58392
-Release:	1
+Release:	2
 Summary:	Syntax highlighting for LaTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/highlightlatex

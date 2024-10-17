@@ -3,7 +3,7 @@ Version:	58392
 Release:	2
 Summary:	Syntax highlighting for LaTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/highlightlatex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/highlightlatex
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.doc.r%{version}.tar.xz

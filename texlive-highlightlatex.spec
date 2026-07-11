@@ -1,37 +1,20 @@
-Name:		texlive-highlightlatex
-Version:	58392
-Release:	2
+%global tl_name highlightlatex
+%global tl_revision 58392
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Syntax highlighting for LaTeX
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/highlightlatex
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/highlightlatex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides extensive colored syntax highlighting for
-LaTeX. For this purpose it builds on the generic listings
-package.
+This package provides extensive colored syntax highlighting for LaTeX.
+For this purpose it builds on the generic listings package.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/highlightlatex
-%doc %{_texmfdistdir}/doc/latex/highlightlatex
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
